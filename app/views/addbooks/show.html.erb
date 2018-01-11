@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @addbook.name %>
+</p>
+
+<p>
+  <strong>Addr:</strong>
+  <%= @addbook.addr %>
+</p>
+
+<p>
+  <strong>Addyear:</strong>
+  <%= @addbook.addyear %>
+</p>
+
+<%= link_to 'Edit', edit_addbook_path(@addbook) %> |
+<%= link_to 'Back', addbooks_path %>
