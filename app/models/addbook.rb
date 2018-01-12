@@ -1,2 +1,0 @@
-class Addbook < ApplicationRecord
-end
