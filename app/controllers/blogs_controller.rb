@@ -6,7 +6,6 @@ class BlogsController < ApplicationController
   end
 
   # GET /blogs/1
-  # GET /blogs/1.json
   def show
   end
 
@@ -23,13 +22,11 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
     render :new if @blog.invalid?
   end
-  
   # GET /blogs/1/edit
   def edit
   end
 
   # POST /blogs
-  # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
 
@@ -43,15 +40,21 @@ class BlogsController < ApplicationController
       end
     end
   end
-
+  #def update
+  #  if @blog.update(blog_params)
+  #    redirect_to blogs_path, notice: "ブログを編集しました！"
+  #  else
+  #
+  #  end
+  #end
   def update
+    @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "ブログを編集しました！"
     else
       render 'edit'
     end
   end
-
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
@@ -65,6 +68,7 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
+      puts "*******set_blog"
       @blog = Blog.find(params[:id])
     end
 
