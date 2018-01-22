@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+  <section class="main-header">
+    <%= image_tag 'flower_png8.png' %>
+  </section>
+  
+<h1>Monologues</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monologues.each do |monologue| %>
+      <tr>
+        <td><%= monologue.content %></td>
+        <td><%= link_to 'Show', monologue %></td>
+        <td><%= link_to 'Edit', edit_monologue_path(monologue) %></td>
+        <td><%= link_to 'Destroy', monologue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'New Monologue', new_monologue_path, class:"subbuttom" %>

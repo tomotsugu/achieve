@@ -1,0 +1,22 @@
+<%= form_with(model: monologue, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if monologue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(monologue.errors.count, "error") %> prohibited this monologue from being saved:</h2>
+
+      <ul>
+      <% monologue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :monologue_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
